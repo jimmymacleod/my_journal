@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: my_jounral_development
+  pool: 5
+  username: James
+  password: Papaya202
+
+test: &TEST
+  adapter: postgresql
+  encoding: utf8
+  database: my_journal_test
+  pool: 5
+  username: James
+  password: Papaya202
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: my_journal_production
+  pool: 5
+  username: james
+  password: Papaya202
+
+cucumber:
+  <<: *TEST
