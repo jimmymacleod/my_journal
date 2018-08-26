@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   before_action :fetch_user
 
+  include SessionsHelper
+
 private
 
 def fetch_user
