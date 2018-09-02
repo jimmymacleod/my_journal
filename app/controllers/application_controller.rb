@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
 private
 
-def fetch_user
+  def fetch_user
 
     if session[:user_id].present?
       @current_user = User.find_by :id => session[:user_id]
@@ -19,6 +19,14 @@ def fetch_user
 
   def authorize_user
    redirect_to root_path unless @current_user.present?
+  end
+
+  def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
   end
 
 end

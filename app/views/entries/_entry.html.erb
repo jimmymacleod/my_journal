@@ -1,0 +1,9 @@
+<li id="entry-<%= entry.id %>">
+  <!-- Will need to look at the CSS later -->
+
+  <span class="user"><%= link_to entry.user.name, entry.user %></span>
+  <span class="content"><%= entry.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(entry.created_at) %> ago.
+  </span>
+</li>
